@@ -1,0 +1,14 @@
+- name: Error demo
+  hosts: alma2
+  ignore_errors: true
+  tasks:
+    - name: copy a file
+      copy:
+        src: /tmp/hello
+        dst: /tmp/
+    - name: showing syntax error
+      debug:
+        msg: this is a syntax error
+    - name: runnin this
+      debug:
+        msg: running this
