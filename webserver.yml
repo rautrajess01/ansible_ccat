@@ -1,0 +1,18 @@
+- name: run a webserver
+  gather_facts: no
+  hosts: alma2
+  tasks:
+    - name: Installing httpd
+      dnf:
+        name: httpd
+        state: latest
+    - name: start and enable httpd
+      service:
+        name: httpd
+        state: started
+        enabled: true
+    - name: copy a prepared file
+      copy:
+        src: /tmp/index.html
+        dest: /var/www/html
+
