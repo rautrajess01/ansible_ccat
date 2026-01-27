@@ -1,0 +1,6 @@
+- name: getting facts
+  hosts: alma
+  tasks:
+    - name: showing facts
+      debug:
+        var: ansible_facts

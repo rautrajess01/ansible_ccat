@@ -1,0 +1,16 @@
+- name: showing host variables
+  hosts: localhost
+  vars:
+    myuser: lori
+    mygroup: mygroup
+  tasks:
+    - debug:
+        msg: this host with the name {{ inventory_hostname }} is using {{ hostvars }}
+    - name: Creating group
+      command: groupadd "{{ mygroup }}"
+    - name: Creating user that is member of {{ groups }}
+      user:
+        name: "{{ myuser }}"
+        groups: "{{ groups }}"
+
+

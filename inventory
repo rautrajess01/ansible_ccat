@@ -1,3 +1,5 @@
+[webserver]
 alma
+
+[dbserver]
 alma2
-control

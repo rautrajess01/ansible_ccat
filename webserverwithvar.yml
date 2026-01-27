@@ -1,0 +1,12 @@
+- name: Installing web package
+  hosts: alma2
+  tasks:
+    - name: Installing {{ webpackage }}
+      yum:
+        name : "{{ webpackage }}"
+        state: latest
+    - name: Starting {{ webpackage }}
+      service:
+        name: "{{ webservice }}"
+        state: started
+        enabled: yes
