@@ -1,0 +1,8 @@
+- name:
+  hosts: localhost
+  vars_files:
+    - loopvars
+  tasks:
+    - debug:
+        msg: showing {{ item }}
+      loop: "{{ myitems }}"

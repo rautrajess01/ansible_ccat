@@ -1,0 +1,14 @@
+- name: Showing handlers
+  hosts: alma2
+  tasks:
+    - name: copy a file
+      copy:
+        src: /tmp/index.html
+        dest: /var/www/html/index.html
+      notify:
+        - restart_web
+  handlers:
+    - name: restart_web
+      service:
+        name: httpd
+        state: restarted
