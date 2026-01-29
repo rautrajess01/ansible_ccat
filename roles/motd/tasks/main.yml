@@ -1,0 +1,6 @@
+---
+# tasks file for motd
+- name: Running motd
+  template:
+    src: motd.j2
+    dest: /etc/motd

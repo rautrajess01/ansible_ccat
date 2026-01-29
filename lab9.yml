@@ -1,0 +1,13 @@
+- name: Install nginx
+  hosts: alma2
+  pre_tasks:
+    - yum:
+        name: httpd
+        state: absent
+    - yum:
+        name: "*"
+        state: latest
+  roles:
+    - geerlingguy.nginx
+  post_tasks:
+    - command: yum clean all

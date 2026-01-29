@@ -1,0 +1,8 @@
+- name: Use galaxy nginx role
+  hosts: alma2
+  pre_tasks:
+    - service:
+        name: httpd
+        state: stopped
+  roles:
+    - role: geerlingguy.nginx

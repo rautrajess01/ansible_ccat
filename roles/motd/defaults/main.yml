@@ -1,0 +1,3 @@
+---
+# defaults file for motd
+ansible_manager: bob
